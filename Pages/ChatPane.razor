@@ -220,7 +220,7 @@
 
     public async Task Enter(KeyboardEventArgs e)
     {
-        if (e.Code == "Enter" || e.Code == "NumpadEnter")
+        if ((e.CtrlKey && e.Code == "Enter") || (e.CtrlKey && e.Code == "NumpadEnter"))
         {
             await SubmitPromptAsync();
         }
